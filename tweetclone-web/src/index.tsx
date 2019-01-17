@@ -3,20 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import 'typeface-roboto'
+import { BrowserRouter } from 'react-router-dom';
 
-import initReactFirestore, { Provider } from 'react-stateful-firestore'; 
-import { FirestoreConfig } from './firestore';
-
-
-initReactFirestore(FirestoreConfig).then((store:any) => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.getElementById('root')
-  );
-});
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
