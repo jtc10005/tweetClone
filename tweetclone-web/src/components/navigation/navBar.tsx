@@ -49,10 +49,13 @@ class NavBar extends Component<any> {
             <Typography variant="h6" color="inherit" className={classes.grow}>
               T. Clone
             </Typography>
-            <Button color="inherit" onClick={this.nextPath('/')}>
+            {/* <Button color="inherit" onClick={this.nextPath('/')}>
               Login
-            </Button>
-            <NavLink color="inherit"  to="/ViewPosts">
+            </Button> */}
+            <NavLink color="inherit" to="/NewPost">
+              New Post
+            </NavLink>
+            <NavLink color="inherit" to="/ViewPosts">
               View Posts
             </NavLink>
           </Toolbar>

@@ -9,7 +9,9 @@ import {
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/navigation/navBar';
-import CardList from './components/cardList/cardList';
+// import CardList from './components/cardList/cardList';
+import NewPost from './containers/newPost'
+import PostList from './containers/postList'
 import BottomBar from './components/navigation/bottomBar';
 // import logo from './logo.svg';
 // import './App.css';
@@ -40,12 +42,12 @@ class App extends Component {
         
         <Switch>
           <Route exact path="/" component={this.basePage} />
-          <Route path="/ViewPosts" component={CardList} />
+          <Route path="/ViewPosts" component={PostList} />
           {/* both /roster and /roster/:number begin with /roster */}
-          {/* <Route path='/roster' component={Roster}/>
-  <Route path='/schedule' component={Schedule}/> */}
+          {/* <Route path='/roster' component={Roster}/>*/}
+  <Route path='/NewPost' component={NewPost}/> 
         </Switch>
-        <BottomBar />
+        {/* <BottomBar /> */}
       </div>
     );
   }
