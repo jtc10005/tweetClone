@@ -8,8 +8,8 @@ const mapStateToProps = (state: State) => ({
   posts: getPosts(state)
 });
 
-const mapDispatchToProps = {
-  onTodoClicked: undefined //toggleTodo
-}
+// const mapDispatchToProps = {
+//   onTodoClicked: undefined //toggleTodo
+// }
 
-export default connect<any, any, any>(mapStateToProps, mapDispatchToProps)(PostList);
+export default connect<any, any, any, any>(mapStateToProps)(PostList);
