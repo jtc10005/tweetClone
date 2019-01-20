@@ -26,4 +26,3 @@ export function reducer(state: State = initialState, action: Action) {
       return state;
   }
 }
-

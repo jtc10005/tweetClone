@@ -2,34 +2,42 @@ import React, { Component } from 'react';
 import { FormEvent } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import Post from '../../models/post';
 
 interface Props {
-  handleSubmit: (value: string) => void;
+  handleSubmit: (value: Post) => void;
 }
 interface State {
-  value: string;
+  value: Post;
 }
 
 export default class AddPostForm extends Component<Props, State> {
+  newPost: Post;
   constructor(props: Props) {
     super(props);
-    this.state = { value: '' }; // Value is empty by default
+    this.newPost = this._newPost();
+    this.state = { value: this.newPost }; // Value is empty by default
     this._updateValue = this._updateValue.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
   }
 
-  _updateValue(value: string) {
-    this.setState({ value });
+  _newPost(): Post {
+    return { postText: '', postId: '', createdDate: new Date() };
+  }
+
+  _updateValue(postText: string) {
+    this.newPost.postText = postText;
+    this.setState({ value: this.newPost });
   }
 
   _handleSubmit(e: FormEvent<any>) {
     e.preventDefault();
-    if (!this.state.value.trim()) {
+    if (!this.state.value.postText.trim()) {
       return;
     }
 
     this.props.handleSubmit(this.state.value);
-    this.setState({ value: '' });
+    this.setState({ value: this._newPost() });
   }
 
   render() {
@@ -40,7 +48,7 @@ export default class AddPostForm extends Component<Props, State> {
         <TextField
           id="standard-name"
           label="postText"
-          value={value}
+          value={value.postText}
           onChange={e => _updateValue(e.target.value)}
           margin="normal"
           multiline={true}

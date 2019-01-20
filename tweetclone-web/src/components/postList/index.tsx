@@ -18,7 +18,7 @@ export default class PostList extends Component<Props, State> {
       <ul>
         {
           posts.map(post => (
-            <li key={post.postText}
+            <li key={post.postId}
             //   onClick={() => onTodoClicked(todo.id)}
             //   style={{ textDecoration: `${todo.done ? 'line-through' : ''}`, cursor: 'pointer' }}
               >
