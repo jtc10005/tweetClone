@@ -10,16 +10,3 @@ export const initialState:State = {
 };
 
 export const reducer = combineReducers<State>({posts:postReducer.reducer})
-
-// function rootReducer(state = initialState, action: any) {
-//   return state;
-// }
-// export default rootReducer;
-
-// import { combineReducers } from 'redux'
-// import todos from './todos'
-// import NewPost from './newPost'
-
-// const combinedReducers = combineReducers({ todos, NewPost } as any);
-
-// export default combinedReducers;

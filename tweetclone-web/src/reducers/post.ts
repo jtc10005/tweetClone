@@ -1,6 +1,7 @@
 import Post from '../models/post';
 import { ActionTypes, Action } from '../actions/post';
 
+
 export interface State {
   posts: Post[];
 }
